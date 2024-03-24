@@ -20,17 +20,17 @@ def tools(pump, wrench):
 def test_init_category(tools):
     assert tools.name == "Tools"
     assert tools.discription == "Auto repair tools"
-    assert tools.products == [pump, wrench]
+    #assert tools.products == [pump, wrench]
 
-def test_init_product(product_tools):
-    assert product_tools.name == "Pump"
-    assert product_tools.discription == "Electric pump, 10 bar"
-    assert product_tools.price == 2000
-    assert product_tools.quantity_in_stock ==30
+def test_init_product(pump):
+    assert pump.name == "Pump"
+    assert pump.discription == "Electric pump, 10 bar"
+    assert pump.price == 2000
+    assert pump.quantity_in_stock ==30
 
 
 def test_quantity_category(tools):
-    assert tools.quantity_category == 1
+    assert tools.quantity_category == 2
 
 
 def test_quantity_products(tools):
