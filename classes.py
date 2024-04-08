@@ -16,6 +16,10 @@ class Category:
 
     @property
     def add_product_at_list(self, object_product):
+        return f'{object_product}, будет добавлен в категорию {self.name}'
+
+    @add_product_at_list.setter
+    def add_product_at_list(self, object_product):
         self.__products.append(object_product)
         Category.quantity_products += 1
 
