@@ -30,8 +30,8 @@ def test_init_product(pump):
 
 
 def test_quantity_category(tools):
-    assert Category.quantity_category == 1
+    assert Category.quantity_category == 2
 
 
 def test_quantity_products(tools):
-    assert Category.quantity_products == 2
+    assert Category.quantity_products == 6
