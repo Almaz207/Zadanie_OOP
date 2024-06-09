@@ -1,3 +1,6 @@
+from abstract_class import AbstractProduct
+
+
 class Category:
     """Категория товаров"""
     name: str
@@ -48,7 +51,7 @@ class Category:
             print(f'{product}!')
 
 
-class Product:
+class Product(AbstractProduct):
     """Товары(продукты)"""
     name: str
     discription: str
@@ -83,9 +86,10 @@ class Product:
             self.__price = new_price
 
     def __add__(self, other):
-        """Метод выполняется при сложении двух объектов одного класса(Нельзя сложить объект родительского и дочернего класса) и
+        """Метод выполняется при сложении двух объектов одного класса
+        (Нельзя сложить объект родительского и дочернего класса) и
         вернет сумму произведений количества на цену двух этих объектов"""
-        if type(self) == type(other):
+        if type(self) is type(other):
             return self.price * self.quantity_in_stock + other.price * other.quantity_in_stock
         else:
             raise TypeError
