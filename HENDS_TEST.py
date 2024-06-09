@@ -15,7 +15,7 @@ print(product2)
 
 tools.add_product_at_list = product1
 tools.add_product_at_list = product2
-# print(tools.return_product)
+print(tools.return_product)
 
 print(tools)
 print(product1 + product2)
@@ -31,4 +31,7 @@ product3 = Smartphone("Сяёми", "2024", 15000, 115, 50000, 'Y11', '128Gb', '
 
 print(product3)
 print(type(product3))
-print(product1 + product3)
+# print(product1 + product3)
+print(repr(product1))
+print(repr(product2))
+print(repr(product3))
