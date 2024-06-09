@@ -3,14 +3,14 @@ from abc import ABC, abstractmethod
 
 class AbstractProduct(ABC):
 
-    @abstractmethod
     @property
+    @abstractmethod
     def price(self):
         """Абстрактный метод, для реализации сеттера"""
         pass
 
-    @abstractmethod
     @price.setter
+    @abstractmethod
     def price(self):
         """Абстрактный метод для изменения цены"""
         pass

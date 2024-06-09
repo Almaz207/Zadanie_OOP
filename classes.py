@@ -50,8 +50,14 @@ class Category:
         for product in self.products:
             print(f'{product}!')
 
+class Representation:
+    # def __init__(self):
+    #     super().__init__()
 
-class Product(AbstractProduct):
+    def __repr__(self):
+        return f'{self.__class__.__name__}1 {self.name}, 2 {self.discription}, 3 {self.price}, 4 {self.quantity_in_stock}'
+
+class Product(AbstractProduct,Representation):
     """Товары(продукты)"""
     name: str
     discription: str
@@ -59,6 +65,7 @@ class Product(AbstractProduct):
     quantity_in_stock: int
 
     def __init__(self, name: str, discription: str, price: float, quantity_in_stock: int):
+        super().__init__()
         self.name = name
         self.discription = discription
         self.price = price
@@ -93,6 +100,9 @@ class Product(AbstractProduct):
             return self.price * self.quantity_in_stock + other.price * other.quantity_in_stock
         else:
             raise TypeError
+
+
+
 
 
 class Smartphone(Product):
