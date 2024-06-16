@@ -35,3 +35,8 @@ print(type(product3))
 print(repr(product1))
 print(repr(product2))
 print(repr(product3))
+
+product1 = Product("насос", "Electric pump, 10 bar", 2000, 0) #код для проверки ошибки нулевого количества
+
+technical = Category("Техника", "категория для теста обработки ошибок", []) #код для проверки средней цены в категории
+print(Category.consider_average_price(technical)) #код для проверки средней цены в категории
