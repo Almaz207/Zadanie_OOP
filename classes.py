@@ -1,4 +1,5 @@
 from abstract_class import AbstractProduct
+from users_exceptions import Empty_Value
 
 
 class Category:
@@ -50,9 +51,20 @@ class Category:
         for product in self.products:
             print(f'{product}!')
 
+
+    def consider_average_price(self):
+        price = 0
+        quantity = 0
+        try:
+            for product in self.products:
+                price += product.price
+                quantity += product.quantity_in_stock
+            return price/quantity
+        except ZeroDivisionError:
+                print("В категории нет товаров")
+                return 0
+
 class Representation:
-    # def __init__(self):
-    #     super().__init__()
 
     def __repr__(self):
         return f'{self.__class__.__name__}1 {self.name}, 2 {self.discription}, 3 {self.price}, 4 {self.quantity_in_stock}'
@@ -69,7 +81,10 @@ class Product(AbstractProduct,Representation):
         self.name = name
         self.discription = discription
         self.price = price
-        self.quantity_in_stock = quantity_in_stock
+        if quantity_in_stock == 0:
+            raise ValueError("Количество должно быть натуральным числом")
+        else:
+            self.quantity_in_stock = quantity_in_stock
 
     def __str__(self):
         """Дандер метод для отображения информации о цене и остатках товара"""
