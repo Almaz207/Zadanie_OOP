@@ -1,5 +1,4 @@
 from abstract_class import AbstractProduct
-from users_exceptions import Empty_Value
 
 
 class Category:
